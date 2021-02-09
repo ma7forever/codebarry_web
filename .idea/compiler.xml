@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="codebarry_admin" />
+        <module name="codebarry_util" />
+        <module name="util" />
+        <module name="codebarry_commons" />
+        <module name="xo" />
+        <module name="codebarry_algorithm" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="codebarry_base" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="codebarry_admin" options="-parameters" />
+      <module name="codebarry_algorithm" options="-parameters" />
+      <module name="codebarry_base" options="-parameters" />
+      <module name="codebarry_commons" options="-parameters" />
+      <module name="codebarry_util" options="-parameters" />
+      <module name="util" options="-parameters" />
+      <module name="xo" options="-parameters" />
+    </option>
+  </component>
+</project>
