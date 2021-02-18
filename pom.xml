@@ -14,15 +14,15 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <mybatis.plus.boot.starter.version>3.1.2</mybatis.plus.boot.starter.version>
-
+        <dyuproject.version>1.1.5</dyuproject.version>
     </properties>
     <modules>
         <module>codebarry_admin</module>
         <module>codebarry_commons</module>
-        <module>xo</module>
-        <module>util</module>
         <module>codebarry_util</module>
         <module>codebarry_algorithm</module>
+        <module>codebarry_xo</module>
+        <module>codebarry_base</module>
     </modules>
 
 </project>
