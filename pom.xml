@@ -19,10 +19,11 @@
     <modules>
         <module>codebarry_admin</module>
         <module>codebarry_commons</module>
-        <module>codebarry_util</module>
+        <module>codebarry_utils</module>
         <module>codebarry_algorithm</module>
         <module>codebarry_xo</module>
         <module>codebarry_base</module>
+        <module>codebarry_myweb</module>
     </modules>
 
 </project>

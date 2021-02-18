@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="codebarry_admin" />
         <module name="codebarry_utils" />
+        <module name="codebarry_myweb" />
         <module name="codebarry_xo" />
         <module name="codebarry_base" />
         <module name="codebarry_commons" />
@@ -29,6 +30,7 @@
       <module name="codebarry_algorithm" options="-parameters" />
       <module name="codebarry_base" options="-parameters" />
       <module name="codebarry_commons" options="-parameters" />
+      <module name="codebarry_myweb" options="-parameters" />
       <module name="codebarry_utils" options="-parameters" />
       <module name="codebarry_xo" options="-parameters" />
       <module name="util" options="-parameters" />
