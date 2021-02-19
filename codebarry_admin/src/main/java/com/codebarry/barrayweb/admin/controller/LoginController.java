@@ -1,6 +1,5 @@
 package com.codebarry.barrayweb.admin.controller;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,7 +54,6 @@ public class LoginController {
     /**
      * 用户头像
      */
-    @TableField(exist = false)
     private String photoUrl;
 
 }
