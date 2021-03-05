@@ -16,6 +16,8 @@
         <mybatis.plus.boot.starter.version>3.1.2</mybatis.plus.boot.starter.version>
         <dyuproject.version>1.1.5</dyuproject.version>
         <Hutool.version>4.6.4</Hutool.version>
+        <spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
+
     </properties>
     <modules>
         <module>codebarry_admin</module>
@@ -25,6 +27,26 @@
         <module>codebarry_xo</module>
         <module>codebarry_base</module>
         <module>codebarry_myweb</module>
-    </modules>
+        <module>codebarry_gateway</module>
 
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

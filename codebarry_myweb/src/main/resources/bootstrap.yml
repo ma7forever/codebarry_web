@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        #指定分组
+        group: prod
+        #指定命名空间
+        namespace: prod
+        file-extension: yaml
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: prod
+  application:
+    name: example
+management:
+  endpoints:
+    web:
+      exposure: include=*

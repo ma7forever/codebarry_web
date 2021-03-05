@@ -2,6 +2,7 @@ package com.codebarry.barryweb.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.codebarry.barryweb.base.entity.SuperEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  * @author :cjh
  * @date : 10:50 2021/2/19
  */
-public class User {
+public class User extends SuperEntity<User> {
 
     private static final long serialVersionUID = 1L;
 
@@ -102,7 +103,6 @@ public class User {
      * 平台uuid
      */
     private String uuid;
-
     /**
      * 最后登录时间
      */
