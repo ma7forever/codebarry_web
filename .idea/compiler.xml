@@ -9,19 +9,21 @@
         <outputRelativeToContentRoot value="true" />
         <module name="codebarry_admin" />
         <module name="codebarry_utils" />
+        <module name="untitled" />
         <module name="codebarry_myweb" />
         <module name="codebarry_xo" />
         <module name="codebarry_base" />
+        <module name="codebarry_flinkDemo" />
         <module name="codebarry_commons" />
         <module name="codebarry_gateway" />
         <module name="codebarry_algorithm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="codebarry_gateway" target="1.8" />
       <module name="test" target="1.8" />
       <module name="test.main" target="1.8" />
       <module name="test.test" target="1.8" />
+      <module name="untitled" target="1.8" />
       <module name="util" target="1.8" />
       <module name="xo" target="1.8" />
     </bytecodeTargetLevel>
@@ -32,10 +34,12 @@
       <module name="codebarry_algorithm" options="-parameters" />
       <module name="codebarry_base" options="-parameters" />
       <module name="codebarry_commons" options="-parameters" />
+      <module name="codebarry_flinkDemo" options="-parameters" />
       <module name="codebarry_gateway" options="-parameters" />
       <module name="codebarry_myweb" options="-parameters" />
       <module name="codebarry_utils" options="-parameters" />
       <module name="codebarry_xo" options="-parameters" />
+      <module name="untitled" options="-parameters" />
       <module name="util" options="-parameters" />
       <module name="xo" options="-parameters" />
     </option>

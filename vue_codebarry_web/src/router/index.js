@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomeIndex from '@/views/home'
+import HomeIndex from '@/views/codebarry_web/home'
 Vue.use(Router)
 
 export const constantRouterMap = [
@@ -8,18 +8,21 @@ export const constantRouterMap = [
     path: '/',
     component: HomeIndex,
         children: [   
-        { path: '/', component: () => import('@/views/index')},
-        { path: '/about', component: () => import('@/views/about')},
-        { path: '/life', component: () => import('@/views/life') },
-        { path: '/list', component: () => import('@/views/list') },
-      { path: '/sort', component: () => import('@/views/sort') },
-      { path: '/share', component: () => import('@/views/share') },
-      { path: '/subject', component: () => import('@/views/subject') },
-      { path: '/classify', component: () => import('@/views/classify') },
-      { path: '/tag', component: () => import('@/views/tag') },
-      { path: '/time', component: () => import('@/views/time') },
-      { path: '/info', component: () => import('@/views/info') },
-      { path: '/messageBoard', component: () => import('@/views/messageBoard') },
+          {path:'/',component: () => import('@/views/codebarry_web/index')},
+          
+          {path:'/about',component: () => import('@/views/codebarry_web/index')}
+      //   { path: '/', component: () => import('@/views/codebarry_web/index')},
+      //   { path: '/about', component: () => import('@/views/about')},
+      //   { path: '/life', component: () => import('@/views/life') },
+      //   { path: '/list', component: () => import('@/views/list') },
+      // { path: '/sort', component: () => import('@/views/sort') },
+      // { path: '/share', component: () => import('@/views/share') },
+      // { path: '/subject', component: () => import('@/views/subject') },
+      // { path: '/classify', component: () => import('@/views/classify') },
+      // { path: '/tag', component: () => import('@/views/tag') },
+      // { path: '/time', component: () => import('@/views/time') },
+      // { path: '/info', component: () => import('@/views/info') },
+      // { path: '/messageBoard', component: () => import('@/views/messageBoard') },
     ]
   },
   { path: '/404', component: () => import('@/views/404') },

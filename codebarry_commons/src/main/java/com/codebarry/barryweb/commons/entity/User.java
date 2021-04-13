@@ -1,9 +1,11 @@
-package com.codebarry.barryweb.entity;
+package com.codebarry.barryweb.commons.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.codebarry.barryweb.base.entity.SuperEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -12,7 +14,9 @@ import java.util.Date;
  * @author :cjh
  * @date : 10:50 2021/2/19
  */
-public class User extends SuperEntity<User> {
+@Data
+@TableName("t_user")
+public class User {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,7 +24,6 @@ public class User extends SuperEntity<User> {
      * 用户名
      */
     private String userName;
-
     /**
      * 密码
      */
@@ -71,12 +74,6 @@ public class User extends SuperEntity<User> {
      */
     @TableField(updateStrategy = FieldStrategy.IGNORED)
     private String weChat;
-
-    /**
-     * 职业
-     */
-    @TableField(updateStrategy = FieldStrategy.IGNORED)
-    private String occupation;
 
     /**
      * 自我简介最多150字

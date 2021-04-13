@@ -1,4 +1,4 @@
-package com.codebarry.barryweb.myweb.controller;
+package com.codebarry.barryweb.myweb.global;
 
 /**
  * @author :cjh

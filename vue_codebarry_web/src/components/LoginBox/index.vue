@@ -107,7 +107,7 @@
   import {login, localLogin, localRegister} from "@/api/user";
   import { Loading } from 'element-ui';
   export default {
-    name: "share",
+    name: "share",  
     data() {
       return {
         loading: null,

@@ -1,6 +1,7 @@
 package com.codebarry.barryweb.xo.service;
 
-import com.codebarry.barryweb.entity.User;
+import com.codebarry.barryweb.base.service.SuperService;
+import com.codebarry.barryweb.commons.entity.User;
 
 import java.util.List;
 
@@ -8,12 +9,8 @@ import java.util.List;
  * @author :cjh
  * @date : 15:24 2021/3/5
  */
-public interface UserService {
-    /**
-     * 通过ids获取用户列表
-     *
-     * @param ids
-     * @return
-     */
-    public List<User> getUserListByIds(List<String> ids);
+public interface UserService extends SuperService<User> {
+
+ //   public List<User> getUserListByIds(List<String> ids);
+    public User getUserById(String id);
 }

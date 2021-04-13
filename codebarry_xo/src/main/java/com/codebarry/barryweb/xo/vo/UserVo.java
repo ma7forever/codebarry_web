@@ -19,7 +19,7 @@ public class UserVo extends BaseVO {
      * 用户名
      */
   //  @NotBlank(groups = {Insert.class, GetOne.class})
-  //  @Range(groups = {Insert.class, Update.class}, min = 5, max = 30)
+  //  @Range(groups = {Insert.class, Updat  e.class}, min = 5, max = 30)
     private String userName;
 
     /**
