@@ -1,4 +1,4 @@
-package com.codebarry.barrayweb.admin.security;
+package com.codebarry.barryweb.admin.security;
 
 
 import com.alibaba.fastjson.JSONObject;
@@ -40,7 +40,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
         result.put("code", ECode.UNAUTHORIZED);
         result.put("msg", msg);
         result.put("data", "token无效或过期,请重新登录");
+
         response.getWriter().write(JSONObject.toJSONString(result));
+
     }
 }
 

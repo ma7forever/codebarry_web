@@ -1,4 +1,4 @@
-package com.codebarry.barrayweb.admin.security;
+package com.codebarry.barryweb.admin.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

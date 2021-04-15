@@ -24,3 +24,4 @@ spring:
         group: prod
         #指定命名空间
         namespace: ec422caf-a280-4e8a-a6b2-aaa1b037c282
+  security:
