@@ -1,5 +1,6 @@
 package com.codebarry.barryweb.admin;
 
+import com.codebarry.barryweb.xo.service.imp.UserServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -12,9 +13,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @SpringBootApplication
 @ComponentScan(basePackages = {
-        "com.codebarry.barryweb.utils",
         "com.codebarry.barryweb.admin",
-        "com.codebarry.barryweb.xo"
+        "com.codebarry.barryweb.xo.service",
+        "com.codebarry.barryweb.commons.config",
+        "com.codebarry.barryweb.utils"
 })
 public class AdminApplication {
     public static void main(String[] args) {
