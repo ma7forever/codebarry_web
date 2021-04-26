@@ -1,18 +1,13 @@
 package com.codebarry.barryweb.myweb.controller;
 
 import com.codebarry.barryweb.commons.entity.Admin;
-import com.codebarry.barryweb.commons.entity.User;
 import com.codebarry.barryweb.utils.RedisUtil;
 import com.codebarry.barryweb.xo.service.AdminService;
 import com.codebarry.barryweb.xo.service.UserService;
-import com.codebarry.barryweb.xo.service.imp.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author :cjh

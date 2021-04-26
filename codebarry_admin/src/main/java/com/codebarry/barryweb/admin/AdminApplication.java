@@ -1,6 +1,5 @@
 package com.codebarry.barryweb.admin;
-
-import com.codebarry.barryweb.xo.service.imp.UserServiceImpl;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * ProtoStuffSerializerUtil
- *
+ * 这是用来做格式化的
  * @author Sirius
  * @date 2019-1-8
  */

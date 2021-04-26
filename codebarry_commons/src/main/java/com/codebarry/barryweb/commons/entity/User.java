@@ -16,7 +16,7 @@ import java.util.Date;
  */
 @Data
 @TableName("t_user")
-public class User {
+public class User extends SuperEntity<User>{
 
     private static final long serialVersionUID = 1L;
 

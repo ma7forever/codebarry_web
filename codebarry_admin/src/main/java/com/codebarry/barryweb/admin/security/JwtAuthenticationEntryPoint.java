@@ -32,7 +32,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
                          HttpServletResponse response,
                          AuthenticationException authException) throws IOException {
 
-        String msg = StringUtils.format("请求访问：{}，认证失败，无法访问系统资源", request.getRequestURI());
+        String msg = "1`1";
+                //= StringUtils.format("请求访问：{}，认证失败，无法访问系统资源", request.getRequestURI());
+
         response.setStatus(ECode.SUCCESS);
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
