@@ -2,6 +2,9 @@ package com.codebarry.barryweb.base.validator.constraint;
 
 import com.codebarry.barryweb.base.validator.annotion.LongNotNull;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
 /**
  * 判断Long是否为空【校验器】
  *

@@ -3,6 +3,9 @@ package com.codebarry.barryweb.base.validator.constraint;
 
 import com.codebarry.barryweb.base.validator.annotion.IntegerNotNull;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
 /**
  * 判断Integer是否为空【校验器】
  *
