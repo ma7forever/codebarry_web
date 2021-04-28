@@ -1,5 +1,6 @@
 package com.codebarry.barryweb.xo.service.imp;
 
+import com.codebarry.barryweb.base.serviceimpl.SuperServiceImpl;
 import com.codebarry.barryweb.commons.entity.Admin;
 import com.codebarry.barryweb.xo.mapper.AdminMapper;
 import com.codebarry.barryweb.xo.mapper.UserMapper;
@@ -14,7 +15,7 @@ import javax.annotation.Resource;
  */
 
 @Service
-public class AdminServiceImpl implements AdminService {
+public class AdminServiceImpl extends SuperServiceImpl<AdminMapper, Admin> implements AdminService {
     @Resource
     private AdminMapper adminMapper;
 

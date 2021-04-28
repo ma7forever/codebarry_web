@@ -1,4 +1,4 @@
-package com.codebarry.barrayweb.admin.security;
+package com.codebarry.barryweb.admin.security;
 
 
 import com.alibaba.fastjson.JSONObject;

@@ -1,4 +1,4 @@
-package com.codebarry.barrayweb.admin.security;
+package com.codebarry.barryweb.admin.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/creatCode/**",
                         "/file/**"
                 ).permitAll()
-                // 除上面外的所有请求全部需要鉴权认证
+                // 除上面外的所有请求全部需要 鉴权 认证
                 .anyRequest().authenticated();
 
         // 添加两个过滤器
