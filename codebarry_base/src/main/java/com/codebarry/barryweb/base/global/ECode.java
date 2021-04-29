@@ -1,8 +1,10 @@
 package com.codebarry.barryweb.base.global;
 
 /**
- * @author :cjh
- * @date : 19:05 2021/4/13
+ * 状态码常量
+ *
+ * @author: 陌溪
+ * @create: 2019-12-04-14:56
  */
 public class ECode {
 

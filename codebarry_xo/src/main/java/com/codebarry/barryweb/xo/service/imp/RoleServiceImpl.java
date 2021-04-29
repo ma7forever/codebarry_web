@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codebarry.barryweb.base.enums.EStatus;
+import com.codebarry.barryweb.base.serviceImpl.SuperServiceImpl;
+import com.codebarry.barryweb.commons.entity.Admin;
 import com.codebarry.barryweb.commons.entity.Role;
 import com.codebarry.barryweb.utils.RedisUtil;
 import com.codebarry.barryweb.utils.ResultUtil;
@@ -13,6 +15,7 @@ import com.codebarry.barryweb.xo.global.MessageConf;
 import com.codebarry.barryweb.xo.global.RedisConf;
 import com.codebarry.barryweb.xo.global.SQLConf;
 import com.codebarry.barryweb.xo.global.SysConf;
+import com.codebarry.barryweb.xo.mapper.RoleMapper;
 import com.codebarry.barryweb.xo.service.AdminService;
 import com.codebarry.barryweb.xo.service.RoleService;
 import com.codebarry.barryweb.xo.vo.RoleVO;
@@ -21,15 +24,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Set;
-
 /**
+*
  * <p>
  * 管理员表 服务实现类
  * </p>
  *
  * @author limbo
  * @since 2018-09-30
- */
+**/
+
 @Service
 public class RoleServiceImpl extends SuperServiceImpl<RoleMapper, Role> implements RoleService {
 
@@ -106,10 +110,11 @@ public class RoleServiceImpl extends SuperServiceImpl<RoleMapper, Role> implemen
         return ResultUtil.successWithMessage(MessageConf.DELETE_SUCCESS);
     }
 
-
-    /**
+/**
+*
      * 删除Redis中管理员的访问路径
-     */
+
+**/
     private void deleteAdminVisitUrl() {
         Set<String> keys = redisUtil.keys(RedisConf.ADMIN_VISIT_MENU + "*");
         redisUtil.delete(keys);

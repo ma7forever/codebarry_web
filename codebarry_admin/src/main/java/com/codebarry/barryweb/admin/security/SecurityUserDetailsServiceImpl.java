@@ -6,6 +6,7 @@ import com.codebarry.barryweb.commons.entity.Role;
 import com.codebarry.barryweb.xo.global.SQLConf;
 import com.codebarry.barryweb.xo.global.SysConf;
 import com.codebarry.barryweb.xo.service.AdminService;
+import com.codebarry.barryweb.xo.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,6 +22,7 @@ import java.util.List;
  * @author 陌溪
  * @date 2020/9/14 10:43
  */
+
 @Service
 public class SecurityUserDetailsServiceImpl implements UserDetailsService {
 
@@ -30,18 +32,20 @@ public class SecurityUserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private RoleService roleService;
 
-    /**
+/**
      * @param username 浏览器输入的用户名【需要保证用户名的唯一性】
      * @return
      * @throws UsernameNotFoundException
      */
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq(SQLConf.USER_NAME, username);
         queryWrapper.last(SysConf.LIMIT_ONE);
-        Admin admin = adminService.getOne(queryWrapper);
+        Admin admin = adminService.getOne(queryWrapper);//请求数据库
+
         if (admin == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {

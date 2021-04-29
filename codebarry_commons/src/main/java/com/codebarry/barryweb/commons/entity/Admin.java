@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.codebarry.barryweb.base.entity.SuperEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.moxi.mougblog.base.entity.SuperEntity;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 

@@ -1,6 +1,6 @@
 package com.codebarry.barryweb.base.validator.constraint;
 
-import com.moxi.mougblog.base.validator.annotion.BooleanNotNULL;
+import com.codebarry.barryweb.base.validator.annotion.BooleanNotNULL;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.codebarry.barryweb.base.entity.SuperEntity;
-import com.moxi.mougblog.base.entity.SuperEntity;
 import lombok.Data;
 
 /**

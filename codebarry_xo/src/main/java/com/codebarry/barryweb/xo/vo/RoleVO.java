@@ -1,4 +1,5 @@
 package com.codebarry.barryweb.xo.vo;
+
 import com.codebarry.barryweb.base.validator.annotion.NotBlank;
 import com.codebarry.barryweb.base.validator.group.Insert;
 import com.codebarry.barryweb.base.validator.group.Update;

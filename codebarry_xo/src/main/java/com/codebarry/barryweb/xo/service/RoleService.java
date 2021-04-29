@@ -1,9 +1,9 @@
 package com.codebarry.barryweb.xo.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.moxi.mogublog.commons.entity.Role;
-import com.moxi.mogublog.xo.vo.RoleVO;
-import com.moxi.mougblog.base.service.SuperService;
+import com.codebarry.barryweb.base.service.SuperService;
+import com.codebarry.barryweb.commons.entity.Role;
+import com.codebarry.barryweb.xo.vo.RoleVO;
 
 /**
  * 角色表 服务类

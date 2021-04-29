@@ -1,8 +1,32 @@
 package com.codebarry.barryweb.base.vo;
+import com.codebarry.barryweb.base.validator.Messages;
+import com.codebarry.barryweb.base.validator.annotion.LongNotNull;
+import com.codebarry.barryweb.base.validator.group.GetList;
+import lombok.Data;
 
 /**
- * @author :cjh
- * @date : 11:10 2021/2/18
+ * PageVO  用于分页
+ *
+ * @author: 陌溪
+ * @create: 2019-12-03-22:38
  */
-public class PageInfo {
+@Data
+public class PageInfo<T> {
+
+    /**
+     * 关键字
+     */
+    private String keyword;
+
+    /**
+     * 当前页
+     */
+    @LongNotNull(groups = {GetList.class}, message = Messages.PAGE_NOT_NULL)
+    private Long currentPage;
+
+    /**
+     * 页大小
+     */
+    @LongNotNull(groups = {GetList.class}, message = Messages.SIZE_NOT_NULL)
+    private Long pageSize;
 }

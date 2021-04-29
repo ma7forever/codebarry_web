@@ -1,6 +1,6 @@
 package com.codebarry.barryweb.xo.global;
 
-import com.moxi.mougblog.base.global.BaseRedisConf;
+import com.codebarry.barryweb.base.global.BaseRedisConf;
 
 /**
  * Redis常量类

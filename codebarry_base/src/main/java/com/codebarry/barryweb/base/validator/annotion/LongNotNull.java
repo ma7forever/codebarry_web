@@ -1,9 +1,8 @@
 package com.codebarry.barryweb.base.validator.annotion;
 
 
+import com.codebarry.barryweb.base.validator.Messages;
 import com.codebarry.barryweb.base.validator.constraint.LongValidator;
-import com.moxi.mougblog.base.validator.Messages;
-import com.moxi.mougblog.base.validator.constraint.LongValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

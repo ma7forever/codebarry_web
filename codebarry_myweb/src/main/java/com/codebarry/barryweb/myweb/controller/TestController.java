@@ -39,7 +39,7 @@ public class TestController {
         ids.add("114514");
         *//*
         System.out.println(userService.getUserListByIds(ids));*/
-        return adminService.getAdminById("111");
+        return null;
 
     }
 }

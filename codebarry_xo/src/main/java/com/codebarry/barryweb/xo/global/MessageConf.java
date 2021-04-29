@@ -1,6 +1,6 @@
 package com.codebarry.barryweb.xo.global;
 
-import com.moxi.mougblog.base.global.BaseMessageConf;
+import com.codebarry.barryweb.base.global.BaseMessageConf;
 
 /**
  * 消息通知

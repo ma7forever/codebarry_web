@@ -1,6 +1,6 @@
 package com.codebarry.barryweb.xo.global;
 
-import com.moxi.mougblog.base.global.BaseSQLConf;
+import com.codebarry.barryweb.base.global.BaseSQLConf;
 
 /**
  * SQL字段常量
