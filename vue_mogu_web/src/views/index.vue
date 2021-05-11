@@ -1,113 +1,573 @@
 <template>
-  <article>
-    <!--banner begin-->
-    <div class="picsbox">
-      <FirstRecommend></FirstRecommend>
-      <!--banner end-->
-
-      <!-- 二级推荐 -->
-      <div class="toppic">
-        <li v-for="item in secondData" :key="item.uid" @click="goToInfo(item)">
-          <a href="javascript:void(0);">
-            <i>
-              <img v-if="item.photoList" :src="item.photoList[0]">
-            </i>
-            <h2>{{item.title}}</h2>
-            <span>{{item.blogSort.sortName}}</span>
-          </a>
+<div>
+    <div class="pagebg sh"></div>
+    <div>
+  
+  <div class="container" >
+  <div class="share">
+          <h1 class="t_nav">
+        <span>好咖啡要和朋友一起品尝，好“资料”也要和同样喜欢它的人一起分享。</span>
+        <a href="/" class="n1">电影</a>
+      </h1>
+    <ul>
+    <div style="width:800px;float:left">
+    <li>
+      <div class="shareli">
+        <router-link to="/videoShow">
+         <a href="javascript:void(0);" >
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+              </router-link>
+       </div>
+    </li>
+    
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    </div>
+     <div class="sidebar2" style="width:300px;float:right">
+      <div class="tuijian"> 
+      <h2 class="hometitle"></h2>
+      <ul class="tjpic" >
+        <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+        <p><a href="javascript:void(0);">标题A</a></p>
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题B</a></p>
+          <span>2021/5/9</span>
         </li>
-      </div>
+
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题C</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题D</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+   
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题F</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
     </div>
-    <div class="blank"></div>
-
-    <!--blogsbox begin-->
-    <div class="blogsbox">
-      <div
-        v-for="item in newBlogData"
-        :key="item.uid"
-        class="blogs"
-        data-scroll-reveal="enter bottom over 1s"
-      >
-        <h3 class="blogtitle">
-          <a href="javascript:void(0);" @click="goToInfo(item)">{{item.title}}</a>
-        </h3>
-
-        <span class="blogpic">
-          <a href="javascript:void(0);" @click="goToInfo(item)" title>
-            <img v-if="item.photoList" :src="item.photoList[0]" alt>
-          </a>
-        </span>
-
-        <p class="blogtext">{{item.summary}}</p>
-        <div class="bloginfo">
-          <ul>
-
-            <li class="author">
-              <span class="iconfont">&#xe60f;</span>
-              <a href="javascript:void(0);" @click="goToAuthor(item.author)">{{item.author}}</a>
-            </li>
-            <li class="lmname" v-if="item.blogSort">
-              <span class="iconfont">&#xe603;</span>
-              <a
-                href="javascript:void(0);"
-                @click="goToList(item.blogSort.uid)"
-              >{{item.blogSort.sortName}}</a>
-            </li>
-            <li class="view">
-              <span class="iconfont">&#xe8c7;</span>
-              <span>{{item.clickCount}}</span>
-            </li>
-            <li class="like">
-              <span class="iconfont">&#xe663;</span>
-              {{item.collectCount}}
-            </li>
-            <li class="createTime">
-              <span class="iconfont">&#xe606;</span>
-              {{item.createTime}}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="isEnd">
-        <!-- <span v-if="!isEnd">正在加载中~</span> -->
-
-        <div class="loadContent" @click="loadContent" v-if="!isEnd&&!loading">点击加载更多</div>
-
-        <div class="lds-css ng-scope" v-if="!isEnd&&loading">
-          <div style="width:100%;height:100%" class="lds-facebook">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-
-        <span v-if="isEnd">我也是有底线的~</span>
-      </div>
     </div>
-    <!--blogsbox end-->
-
-    <div class="sidebar">
-      <!--标签云-->
-      <TagCloud></TagCloud>
-
-      <!--关注我们-->
-      <FollowUs></FollowUs>
-
-      <!-- 三级推荐 -->
-      <ThirdRecommend></ThirdRecommend>
-
-      <!--四级推荐-->
-      <FourthRecommend></FourthRecommend>
-
-      <!--点击排行-->
-      <HotBlog></HotBlog>
-
-      <!-- 友情链接-->
-      <Link></Link>
+    
+    </ul>
+    
+ 
     </div>
+    <div class="share">
+          <h1 class="t_nav">
+        <span>好咖啡要和朋友一起品尝，好“资料”也要和同样喜欢它的人一起分享。</span>
+        <a href="/" class="n1">科技</a>
+      </h1>
+    <ul>
+    <div style="width:800px;float:left">
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    </div>
+     <div class="sidebar2" style="width:300px;float:right">
+      <div class="tuijian"> 
+      <h2 class="hometitle"></h2>
+      <ul class="tjpic" >
+        <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+        <p><a href="javascript:void(0);">标题A</a></p>
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题B</a></p>
+          <span>2021/5/9</span>
+        </li>
 
-  </article>
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题C</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题D</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+   
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题F</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+    
+    </ul>
+    
+ 
+    </div>
+    <div class="share">
+          <h1 class="t_nav">
+        <span>好咖啡要和朋友一起品尝，好“资料”也要和同样喜欢它的人一起分享。</span>
+        <a href="/" class="n1">动漫</a>
+      </h1>
+    <ul>
+    <div style="width:800px;float:left">
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    </div>
+     <div class="sidebar2" style="width:300px;float:right">
+      <div class="tuijian"> 
+      <h2 class="hometitle"></h2>
+      <ul class="tjpic" >
+        <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+        <p><a href="javascript:void(0);">标题A</a></p>
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题B</a></p>
+          <span>2021/5/9</span>
+        </li>
+
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题C</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题D</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+   
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题F</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+    
+    </ul>
+    
+ 
+    </div>
+..  <div class="share">
+          <h1 class="t_nav">
+        <span>好咖啡要和朋友一起品尝，好“资料”也要和同样喜欢它的人一起分享。</span>
+        <a href="/" class="n1">电视剧</a>
+      </h1>
+    <ul>
+    <div style="width:800px;float:left">
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+        
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    <li>
+      <div class="shareli">
+         <a href="javascript:void(0);">
+                <i>
+                  <img src="static/images/b01.jpg" style="width:100%">
+                </i>
+                <h2>
+                  <b>简介</b>
+                </h2>
+                <span>视频名称</span>
+              </a>
+       </div>
+    </li>
+    </div>
+     <div class="sidebar2" style="width:300px;float:right">
+      <div class="tuijian"> 
+      <h2 class="hometitle"></h2>
+      <ul class="tjpic" >
+        <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+        <p><a href="javascript:void(0);">标题A</a></p>
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题B</a></p>
+          <span>2021/5/9</span>
+        </li>
+
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题C</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题D</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+   
+      <ul class="sidenews">
+        <li >
+          <i><img style="cursor:pointer" src="static/images/b01.jpg"></i>
+          <p><a href="javascript:void(0);">标题F</a></p>
+          <span>2021/5/9</span>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+    
+    </ul>
+    
+ 
+    </div>
+    
+
+
+ 
+    
+    
+    
+    
+    
+    </div>
+    
+  
+    </div> 
+</div>
 </template>
 
 <script>
@@ -118,7 +578,7 @@
   import HotBlog from "../components/HotBlog";
   import FollowUs from "../components/FollowUs";
   import Link from "../components/Link";
-  import {getBlogByLevel, getNewBlog, recorderVisitPage} from "../api/index";
+  import {getBlogByLevel, getNewBlog, getNewVideo, recorderVisitPage} from "../api/index";
   import { Loading } from 'element-ui';
   import {getBlogByUid} from "../api/blogContent";
   export default {
@@ -143,6 +603,7 @@
         fourthData: [], //四级推荐
         newBlogData: [], //最新文章
         hotBlogData: [], //最热文章
+        newVideoData:[],//新视频
         hotTagData: [], //最新标签
         keyword: "",
         currentPage: 1,
@@ -168,6 +629,9 @@
       });
       // 获取最新博客
       this.newBlogList();
+      this.newVideoList();
+      //获取最新视频
+      this.new
       var params = new URLSearchParams();
       params.append("pageName", "INDEX");
         recorderVisitPage(params).then(response => {
@@ -207,7 +671,30 @@
           query: {author: author}
         });
       },
+ //最新视频列表
+      newVideoList() {
+        var that = this;
+        that.loadingInstance = Loading.service({
+          lock: true,
+          text: '正在努力加载中……',
+          background: 'rgba(0, 0, 0, 0.7)'
+        })
 
+        var params = new URLSearchParams();
+        params.append("currentPage", this.currentPage);
+        params.append("pageSize", this.pageSize);
+        getNewVideo(params).then(response => {
+          if (response.code == this.$ECode.SUCCESS) {
+            that.newVideoData = response.data.records;
+            that.total = response.data.total;
+            that.pageSize = response.data.size;
+            that.currentPage = response.data.current;
+          }
+          that.loadingInstance.close();
+        },function(err){
+          that.loadingInstance.close();
+        });
+      },
       //最新博客列表
       newBlogList() {
         var that = this;
@@ -264,167 +751,9 @@
 </script>
 
 <style>
-  .el-loading-mask {
-    z-index: 2002;
-  }
-  .isEnd {
-    float: left;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-  }
-
-  .ng-scope {
-    margin: 0 auto;
-    width: 18%;
-    height: 10%;
-  }
-
-  .loadContent {
-    width: 120px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-    margin: 0 auto;
-    color: aliceblue;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  @keyframes lds-facebook_1 {
-    0% {
-      top: 0px;
-      height: 200px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  @-webkit-keyframes lds-facebook_1 {
-    0% {
-      top: 0px;
-      height: 200px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  @keyframes lds-facebook_2 {
-    0% {
-      top: 20px;
-      height: 160px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  @-webkit-keyframes lds-facebook_2 {
-    0% {
-      top: 20px;
-      height: 160px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  @keyframes lds-facebook_3 {
-    0% {
-      top: 40px;
-      height: 120px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  @-webkit-keyframes lds-facebook_3 {
-    0% {
-      top: 40px;
-      height: 120px;
-    }
-    50% {
-      top: 80px;
-      height: 40px;
-    }
-    100% {
-      top: 80px;
-      height: 40px;
-    }
-  }
-
-  .lds-facebook {
-    position: relative;
-  }
-
-  .lds-facebook div {
-    position: absolute;
-    width: 20px;
-  }
-
-  .lds-facebook div:nth-child(1) {
-    left: 40px;
-    background: #1d0e0b;
-    -webkit-animation: lds-facebook_1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    animation: lds-facebook_1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    -webkit-animation-delay: -0.2s;
-    animation-delay: -0.2s;
-  }
-
-  .lds-facebook div:nth-child(2) {
-    left: 90px;
-    background: #774023;
-    -webkit-animation: lds-facebook_2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    animation: lds-facebook_2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    -webkit-animation-delay: -0.1s;
-    animation-delay: -0.1s;
-  }
-
-  .lds-facebook div:nth-child(3) {
-    left: 140px;
-    background: #d88c51;
-    -webkit-animation: lds-facebook_3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    animation: lds-facebook_3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-  }
-
-  .lds-facebook {
-    width: 90px !important;
-    height: 90px !important;
-    -webkit-transform: translate(-45px, -45px) scale(0.45) translate(45px, 45px);
-    transform: translate(-45px, -45px) scale(0.45) translate(45px, 45px);
-  }
-
-  .iconfont {
-    font-size: 15px;
-    margin-right: 2px;
-  }
-
+.resImg {
+  width: 100%;
+  height: 160px;
+  vertical-align: middle;
+}
 </style>

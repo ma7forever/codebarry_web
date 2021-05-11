@@ -57,7 +57,7 @@ public class WebConfigServiceImpl extends SuperServiceImpl<WebConfigMapper, WebC
         QueryWrapper<WebConfig> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc(SQLConf.CREATE_TIME);
         WebConfig webConfig = webConfigService.getOne(queryWrapper);
-
+        log.error(webConfig.toString());
         //获取图片
         if (webConfig != null && StringUtils.isNotEmpty(webConfig.getLogo())) {
             String pictureList = this.pictureFeignClient.getPicture(webConfig.getLogo(), SysConf.FILE_SEGMENTATION);
@@ -95,7 +95,7 @@ public class WebConfigServiceImpl extends SuperServiceImpl<WebConfigMapper, WebC
 
     @Override
     public WebConfig getWebConfigByShowList() {
-        //从Redis中获取IP来源
+
         String webConfigResult = redisUtil.get(RedisConf.WEB_CONFIG);
         if (StringUtils.isNotEmpty(webConfigResult)) {
             WebConfig webConfig = JsonUtils.jsonToPojo(webConfigResult, WebConfig.class);

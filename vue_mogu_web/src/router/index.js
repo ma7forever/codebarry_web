@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomeIndex from '@/views/home'
+import CreateCenterHome from '@/views/CreateCenterHome'
+
 import store from '../store'
 Vue.use(Router)
 
@@ -21,7 +23,20 @@ export const constantRouterMap = [
       { path: '/time', component: () => import('@/views/time') },
       { path: '/info', component: () => import('@/views/info') },
       { path: '/messageBoard', component: () => import('@/views/messageBoard') },
+      { path: '/videoShow', component: () => import('@/views/videoShow') }
+      
     ]
+  },
+  
+  { path: '/createCenter',
+  component:  CreateCenterHome,
+  children: [{
+    path: '/createCenter',
+    component: () => import('@/views/createCenterIndex')} ,
+    { path: '/uploadVideo', component: () => import('@/views/uploadVideo') }
+
+  ]
+
   },
   { path: '/404', component: () => import('@/views/404') },
   { path: '/500', component: () => import('@/views/500') },

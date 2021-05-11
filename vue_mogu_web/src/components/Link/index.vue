@@ -14,7 +14,7 @@ export default {
   name: "TagCloud",
   data() {
     return {
-      linkData: [], //友情链接
+      linkData: [], //友情链接  
     };
   },
   created() {

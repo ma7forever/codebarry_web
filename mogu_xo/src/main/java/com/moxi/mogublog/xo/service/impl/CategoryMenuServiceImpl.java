@@ -90,7 +90,7 @@ public class CategoryMenuServiceImpl extends SuperServiceImpl<CategoryMenuMapper
     @Override
     public List<CategoryMenu> getAllList(String keyword) {
         QueryWrapper<CategoryMenu> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq(SQLConf.MENU_LEVEL, "1");
+        queryWrapper.eq(SQLConf.MENU_LEVEL, "1");//获取1级
         if (StringUtils.isNotEmpty(keyword)) {
             queryWrapper.eq(SQLConf.UID, keyword);
         }

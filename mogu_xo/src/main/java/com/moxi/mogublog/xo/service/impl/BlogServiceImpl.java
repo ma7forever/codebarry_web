@@ -1249,17 +1249,6 @@ public class BlogServiceImpl extends SuperServiceImpl<BlogMapper, Blog> implemen
             log.error(MessageConf.PLEASE_CONFIGURE_SYSTEM_PARAMS);
         }
 
-//        // 判断Redis中是否缓存了第一页的内容
-//        if (currentPage == 1L) {
-//            //从Redis中获取内容
-//            String jsonResult = redisUtil.get(RedisConf.NEW_BLOG);
-//            //判断redis中是否有文章
-//            if (StringUtils.isNotEmpty(jsonResult)) {
-//                IPage pageList = JsonUtils.jsonToPojo(jsonResult, Page.class);
-//                return pageList;
-//            }
-//        }
-
         QueryWrapper<Blog> queryWrapper = new QueryWrapper<>();
         Page<Blog> page = new Page<>();
         page.setCurrent(currentPage);
@@ -1267,7 +1256,6 @@ public class BlogServiceImpl extends SuperServiceImpl<BlogMapper, Blog> implemen
         queryWrapper.eq(SQLConf.STATUS, EStatus.ENABLE);
         queryWrapper.eq(BaseSQLConf.IS_PUBLISH, EPublish.PUBLISH);
         queryWrapper.orderByDesc(SQLConf.CREATE_TIME);
-
         //因为首页并不需要显示内容，所以需要排除掉内容字段
         queryWrapper.select(Blog.class, i -> !i.getProperty().equals(SQLConf.CONTENT));
 
@@ -1280,11 +1268,6 @@ public class BlogServiceImpl extends SuperServiceImpl<BlogMapper, Blog> implemen
 
         list = setBlog(list);
         pageList.setRecords(list);
-
-        //将从最新博客缓存到redis中
-//        if (currentPage == 1L) {
-//            redisUtil.setEx(RedisConf.NEW_BLOG, JsonUtils.objectToJson(pageList), 1, TimeUnit.HOURS);
-//        }
         return pageList;
     }
 
@@ -1840,7 +1823,6 @@ public class BlogServiceImpl extends SuperServiceImpl<BlogMapper, Blog> implemen
         if (tagUids.size() > 0) {
             tagList = tagService.listByIds(tagUids);
         }
-
         Map<String, BlogSort> sortMap = new HashMap<>();
         Map<String, Tag> tagMap = new HashMap<>();
         Map<String, String> pictureMap = new HashMap<>();

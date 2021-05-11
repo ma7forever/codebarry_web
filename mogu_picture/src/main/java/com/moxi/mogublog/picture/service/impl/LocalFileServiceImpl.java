@@ -157,6 +157,7 @@ public class LocalFileServiceImpl implements LocalFileService {
         // 保存本地，创建目录
         java.io.File file1 = new java.io.File(newPath);
         if (!file1.exists()) {
+            log.info("创建文件");
             file1.mkdirs();
         }
         java.io.File saveFile = new java.io.File(saveUrl);

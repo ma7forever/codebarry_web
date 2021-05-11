@@ -35,7 +35,7 @@
               {{webNavbar.name}}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item v-for="childWebNavbar in webNavbar.childWebNavbar">
+              <el-dropdown-item v-for="childWebNavbar in webNavbar.childWebNavbar" :key="childWebNavbar.uid" >
                 <router-link :to="childWebNavbar.url" v-if="childWebNavbar.isJumpExternalUrl == 0">
                   <a href="javascript:void(0);" @click="openHead">{{ childWebNavbar.name }}</a>
                 </router-link>
@@ -350,7 +350,7 @@
                     反馈状态:
                   </span>
                   <span class="content">
-                    <el-tag v-for="item in feedbackDictList" :key="item.uid" :type="item.listClass" v-if="feedbackItem.feedbackStatus == item.dictValue">{{item.dictLabel}}</el-tag>
+                    <el-tag v-for="item in feedbackDictList" :key="item.uid" :type="item.listClass">{{item.dictLabel}}</el-tag>
                   </span>
                 </div>
 
@@ -395,23 +395,9 @@
         </el-form>
 
       </el-tab-pane>
-      <el-tab-pane label="申请友链" name="5">
-        <span slot="label"><i class="el-icon-share"></i> 申请友链</span>
 
         <el-form label-position="left" :model="blogLink" label-width="100px" ref="blogLink" :rules="linkRules">
           <el-collapse v-model="activeNames">
-            <el-collapse-item title="申请须知" name="1">
-              <div>请确定贵站可以稳定运营</div>
-              <div>原创博客优先，技术类博客优先</div>
-              <div>申请前请先添加下方{{info.name}}友链</div>
-              <div>欢迎各位小伙伴一起互换友链~</div>
-            </el-collapse-item>
-            <el-collapse-item :title="info.name" name="2">
-              <div>网站名称：{{info.name}}</div>
-              <div>网站LOGO：<a :href="info.logoPhoto" target="_blank">点击查看</a></div>
-              <div>网站简介：{{info.title}}</div>
-              <div>网站地址：{{webSite}}</div>
-            </el-collapse-item>
           </el-collapse>
 
           <el-divider></el-divider>
@@ -447,7 +433,6 @@
             <el-button type="primary" @click="submitForm('replyBlogLink')">申 请</el-button>
           </el-form-item>
         </el-form>
-      </el-tab-pane>
       <el-tab-pane label="修改密码" name="6">
         <span slot="label"><i class="el-icon-s-tools"></i> 修改密码</span>
         <el-collapse v-model="activeNames">
@@ -1197,7 +1182,6 @@
     cursor: pointer;
   }
   .emoji-size-small {
-    // 表情大小
     zoom: 0.3;
   }
 </style>
