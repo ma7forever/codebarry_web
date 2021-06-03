@@ -16,13 +16,6 @@ export function getNewBlog (params) {
   })
 }
 
-export function getNewVideo (params) {
-  return request({
-    url: process.env.WEB_API + '/index/getNewVideo',
-    method: 'get',
-    params
-  })
-}
 export function getBlogByTime (params) {
   return request({
     url: process.env.WEB_API + '/index/getBlogByTime',

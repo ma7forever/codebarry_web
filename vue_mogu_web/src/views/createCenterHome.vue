@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class="sideNav">
     <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
   <el-radio-button :label="false">展开</el-radio-button>
   <el-radio-button :label="true">收起</el-radio-button>
@@ -14,7 +14,7 @@
       
     <el-menu-item-group title="投稿">
       
-      <router-link to="uploadVideo">
+      <router-link to="upload">
       <el-menu-item index="1-1">视频投稿</el-menu-item>
       </router-link>
       <el-menu-item index="1-2">专栏投稿</el-menu-item>
@@ -46,7 +46,7 @@
   </router-link> 
 </el-menu>
 
-  <div style="width:998px;margin:20px auto;float:right">
+  <div style="width:998px;margin:20px auto;">
     <router-view/>
   </div>
 </div>
@@ -56,6 +56,10 @@
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
+  }
+  .sideNav{
+    width: 300px;
+    float: left;
   }
 </style>
 

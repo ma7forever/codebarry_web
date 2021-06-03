@@ -69,7 +69,7 @@
 </template>
 
 <script>
-  import { getTagList, getArticleByTagUid } from "../api/tag";
+  import { createUploadVideo, refreshUploadVideo } from "../api/tag";
   export default {
     data() {
       return {

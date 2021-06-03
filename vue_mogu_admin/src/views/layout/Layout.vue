@@ -52,9 +52,11 @@ export default {
     var that = this;
     this.$store.dispatch("GetMenu").then(response => {
       if (response.code == this.$ECode.SUCCESS) {
+  
         var parentList = response.data.parentList;
         var sonList = response.data.sonList;
         var items = [];
+         console.log(sonList = response.data.sonList)
         if (
           parentList &&
           parentList.length > 0 &&

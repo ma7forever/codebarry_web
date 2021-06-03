@@ -18,7 +18,7 @@ export function getWebNavbarAllList(params) {
 
 export function addWebNavbar(params) {
   return request({
-    url: process.env.ADMIN_API + '/webNavbar/add',
+    url: process.env.ADMIN_API + '/webNavbar/add', 
     method: 'post',
     data: params
   })

@@ -23,17 +23,16 @@ export const constantRouterMap = [
       { path: '/time', component: () => import('@/views/time') },
       { path: '/info', component: () => import('@/views/info') },
       { path: '/messageBoard', component: () => import('@/views/messageBoard') },
-      { path: '/videoShow', component: () => import('@/views/videoShow') }
+      { path: '/videoShow', component: () => import('@/views/videoShowAL') }
       
     ]
   },
   
   { path: '/createCenter',
   component:  CreateCenterHome,
-  children: [{
-    path: '/createCenter',
-    component: () => import('@/views/createCenterIndex')} ,
-    { path: '/uploadVideo', component: () => import('@/views/uploadVideo') }
+  children: [
+    {  path: '/createCenter',component: () => import('@/views/createCenterIndex')  } ,
+    {  path: '/upload',component: () => import('@/views/upload')  } ,
 
   ]
 

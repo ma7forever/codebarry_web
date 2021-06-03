@@ -1,24 +1,29 @@
-package com.moxi.mogublog.commons.entity;
+package com.moxi.mogublog.xo.vo;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.moxi.mougblog.base.entity.SuperEntity;
+import com.moxi.mogublog.commons.entity.BlogSort;
+import com.moxi.mogublog.commons.entity.Tag;
+import com.moxi.mougblog.base.validator.annotion.NotBlank;
+import com.moxi.mougblog.base.validator.group.Insert;
+import com.moxi.mougblog.base.validator.group.Update;
+import com.moxi.mougblog.base.vo.BaseVO;
 import lombok.Data;
 import lombok.ToString;
-import org.omg.CORBA.StringHolder;
 
 import java.math.BigInteger;
 import java.util.List;
 
 /**
  * @author :cjh
- * @date : 11:27 2021/5/9
+ * @date : 0:36 2021/5/28
  */
-
+@ToString
 @Data
-@TableName("t_video")
-public class Video extends SuperEntity<Video>{
+public class VideoVO extends BaseVO<VideoVO> {
+
     private static final long serialVersionUID = 1L;
+
+    @NotBlank(groups = {Insert.class, Update.class})
     private String title;
     private Integer playCount;
     private BigInteger size;
@@ -27,26 +32,17 @@ public class Video extends SuperEntity<Video>{
     private String videoSourceId;
     private Integer sort;
     private String userUid;
-    private String sortUid;
+    private String re;
     private String tagUid;
-    @TableField(exist = false)
     private BlogSort blogSort;
-    @TableField(exist = false)
     private List<Tag> tagList;
     private String fileUid;
-    @TableField(exist = false)
-
+    @NotBlank(groups = {Insert.class, Update.class})
+    private String resourceSortUid;
     /**
      * 是否发布
      */
     private Integer isPublish;
-    private String summary;
-    @TableField(exist = false)
-    private List<String> photoList;
 
-    /**
-     * 资源分类
-     */
-    @TableField(exist = false)
-    private ResourceSort resourceSort;
+    private String summary;
 }

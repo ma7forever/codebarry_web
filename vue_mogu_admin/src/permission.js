@@ -6,7 +6,7 @@ import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // 验权
 import { constantRouterMap } from './router/index'
 
-const whiteList = ['/login'] // 不重定向白名单
+const whiteList = ['/login'] // 不重定向白名单 
 const whiteListActiveList = ['/', '/dashboard', '/404', '/401']
 const allList = []
 

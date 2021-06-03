@@ -188,17 +188,25 @@ public class LoginRestApi {
     public String getMenu(HttpServletRequest request) {
 
         Collection<CategoryMenu> categoryMenuList = new ArrayList<>();
-        Admin admin = adminService.getById(request.getAttribute(SysConf.ADMIN_UID).toString());
+
+        Admin admin = adminService.getById(request.getAttribute(SysConf.ADMIN_UID).toString()); //获取管理员信息
 
         List<String> roleUid = new ArrayList<>();
         roleUid.add(admin.getRoleUid());
         Collection<Role> roleList = roleService.listByIds(roleUid);
         List<String> categoryMenuUids = new ArrayList<>();
+
+        //获取管理员权限列表
+
         roleList.forEach(item -> {
             String caetgoryMenuUids = item.getCategoryMenuUids();
+
             String[] uids = caetgoryMenuUids.replace("[", "").replace("]", "").replace("\"", "").split(",");
+            //找出该权限下菜单的UID
             categoryMenuUids.addAll(Arrays.asList(uids));
         });
+
+
         categoryMenuList = categoryMenuService.listByIds(categoryMenuUids);
 
         // 从三级级分类中查询出 二级分类
@@ -277,6 +285,7 @@ public class LoginRestApi {
             }
             // 移除Redis中的用户
             redisUtil.delete(RedisConf.LOGIN_TOKEN_KEY + RedisConf.SEGMENTATION + token);
+
             return ResultUtil.result(SysConf.SUCCESS, MessageConf.OPERATION_SUCCESS);
         }
     }

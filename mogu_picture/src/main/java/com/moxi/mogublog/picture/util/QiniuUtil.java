@@ -87,8 +87,12 @@ public class QiniuUtil {
         UploadManager uploadManager = new UploadManager(cfg);
         String key = StringUtils.getUUID();
         Auth auth = Auth.create(accessKey, secretKey);
+
         String upToken = auth.uploadToken(bucket);
         Response response = uploadManager.put(localFilePath, key, upToken);
+       log.info(localFilePath.toString());
+       log.info(key.toString());
+       log.info(upToken.toString());
         //解析上传成功的结果
         DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
         log.info("{七牛图片上传key: " + putRet.key + ",七牛图片上传hash: " + putRet.hash + "}");

@@ -81,14 +81,14 @@ public class IndexRestApi {
         log.info("获取首页排行博客");
         return ResultUtil.result(SysConf.SUCCESS, blogService.getHotBlog());
     }
-    @ApiOperation(value = "获取首页最新视频", notes = "获取首页最新")
-    @GetMapping("/getNewVideo")
-    public String getHotVideo(HttpServletRequest request,
-                              @ApiParam(name = "currentPage", value = "当前页数", required = false) @RequestParam(name = "currentPage", required = false, defaultValue = "1") Long currentPage,
-                              @ApiParam(name = "pageSize", value = "每页显示数目", required = false) @RequestParam(name = "pageSize", required = false, defaultValue = "10") Long pageSize) {
-        log.info("获取首页排行视频");
-        return ResultUtil.result(SysConf.SUCCESS, videoService.getNewVideo(currentPage, null));
-    }
+//    @ApiOperation(value = "获取首页最新视频", notes = "获取首页最新")
+//    @GetMapping("/getNewVideo")
+//    public String getHotVideo(HttpServletRequest request,
+//                              @ApiParam(name = "currentPage", value = "当前页数", required = false) @RequestParam(name = "currentPage", required = false, defaultValue = "1") Long currentPage,
+//                              @ApiParam(name = "pageSize", value = "每页显示数目", required = false) @RequestParam(name = "pageSize", required = false, defaultValue = "10") Long pageSize) {
+//        log.info("获取首页排行视频");
+//        return ResultUtil.result(SysConf.SUCCESS, videoService.getNewVideo(currentPage, null));
+//    }
 
     @ApiOperation(value = "获取首页最新的博客", notes = "获取首页最新的博客")
     @GetMapping("/getNewBlog")

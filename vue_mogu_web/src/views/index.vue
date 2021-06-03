@@ -12,8 +12,7 @@
     <ul>
     <div style="width:800px;float:left">
     <li>
-      <div class="shareli">
-        <router-link to="/videoShow">
+      <div class="shareli" @click="goToVideoPage('02e478a9f14f4103ada1fd27832aa0a4')">
          <a href="javascript:void(0);" >
                 <i>
                   <img src="static/images/b01.jpg" style="width:100%">
@@ -23,7 +22,6 @@
                 </h2>
                 <span>视频名称</span>
               </a>
-              </router-link>
        </div>
     </li>
     
@@ -638,6 +636,14 @@
       });
     },
     methods: {
+      goToVideoPage(videoId){
+            // 标签uid
+            let routeData = this.$router.resolve({
+              path: "/videoShow",
+              query: { videoId: videoId }
+            });
+            window.open(routeData.href, "_blank");
+      },
       //跳转到文章详情【或推广链接】
       goToInfo(blog) {
         if(blog.type == "0") {
@@ -672,29 +678,29 @@
         });
       },
  //最新视频列表
-      newVideoList() {
-        var that = this;
-        that.loadingInstance = Loading.service({
-          lock: true,
-          text: '正在努力加载中……',
-          background: 'rgba(0, 0, 0, 0.7)'
-        })
+      // newVideoList() {
+      //   var that = this;
+      //   that.loadingInstance = Loading.service({
+      //     lock: true,
+      //     text: '正在努力加载中……',
+      //     background: 'rgba(0, 0, 0, 0.7)'
+      //   })
 
-        var params = new URLSearchParams();
-        params.append("currentPage", this.currentPage);
-        params.append("pageSize", this.pageSize);
-        getNewVideo(params).then(response => {
-          if (response.code == this.$ECode.SUCCESS) {
-            that.newVideoData = response.data.records;
-            that.total = response.data.total;
-            that.pageSize = response.data.size;
-            that.currentPage = response.data.current;
-          }
-          that.loadingInstance.close();
-        },function(err){
-          that.loadingInstance.close();
-        });
-      },
+      //   var params = new URLSearchParams();
+      //   params.append("currentPage", this.currentPage);
+      //   params.append("pageSize", this.pageSize);
+      //   getNewVideo(params).then(response => {
+      //     if (response.code == this.$ECode.SUCCESS) {
+      //       that.newVideoData = response.data.records;
+      //       that.total = response.data.total;
+      //       that.pageSize = response.data.size;
+      //       that.currentPage = response.data.current;
+      //     }
+      //     that.loadingInstance.close();
+      //   },function(err){
+      //     that.loadingInstance.close();
+      //   });
+      // },
       //最新博客列表
       newBlogList() {
         var that = this;
@@ -745,9 +751,11 @@
           }
           that.loading = false;
         });
-      }
+      },
     }
   };
+
+
 </script>
 
 <style>

@@ -3,6 +3,7 @@ import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
   state: {
+    userId:"",
     token: getToken(),
     name: '',
     avatar: '',
@@ -29,6 +30,9 @@ const user = {
     },
     SET_BUTTON_MAP: (state, buttonMap) => {
       state.buttonMap = buttonMap
+    },
+    SET_USERID:(state, userId)=>{
+      state.userId = userId
     }
   },
 
@@ -49,6 +53,9 @@ const user = {
           setToken(data.token)
           // 向store中设置cookie
           commit('SET_TOKEN', data.token)
+          // 向store中设置uid
+          console.log(data)
+          commit('SET_USERID', data.uid)
           resolve(response)
         }).catch(error => {
           reject(error)

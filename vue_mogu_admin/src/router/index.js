@@ -134,6 +134,12 @@ export const constantRouterMap = [
     meta: { title: '资源管理', icon: 'resource' },
     children: [
       {
+        path: 'video',
+        name: '视频',
+        component: () => import('@/views/resource/video'),
+        meta: { title: '视频', icon: 'table' }
+      },
+      {
         path: 'file',
         name: '网盘管理',
         component: () => import('@/views/resource/file/File'),

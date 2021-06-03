@@ -68,10 +68,13 @@ public class StudyVideoServiceImpl extends SuperServiceImpl<StudyVideoMapper, St
         });
         String pictureResult = null;
         Map<String, String> pictureMap = new HashMap<>();
+
+        //获取图片
         if (fileUids != null) {
             pictureResult = this.pictureFeignClient.getPicture(fileUids.toString(), SysConf.FILE_SEGMENTATION);
         }
         List<Map<String, Object>> picList = webUtil.getPictureMap(pictureResult);
+
         picList.forEach(item -> {
             pictureMap.put(item.get(SysConf.UID).toString(), item.get(SysConf.URL).toString());
         });
@@ -82,6 +85,7 @@ public class StudyVideoServiceImpl extends SuperServiceImpl<StudyVideoMapper, St
                 List<String> pictureUidsTemp = StringUtils.changeStringToString(item.getFileUid(), SysConf.FILE_SEGMENTATION);
                 List<String> pictureListTemp = new ArrayList<>();
                 pictureUidsTemp.forEach(picture -> {
+                    //添加标题图片
                     pictureListTemp.add(pictureMap.get(picture));
                 });
                 item.setPhotoList(pictureListTemp);
@@ -89,10 +93,14 @@ public class StudyVideoServiceImpl extends SuperServiceImpl<StudyVideoMapper, St
 
             if (StringUtils.isNotEmpty(item.getResourceSortUid())) {
                 ResourceSort resourceSort = resourceSortService.getById(item.getResourceSortUid());
+                //获取资源分类
                 item.setResourceSort(resourceSort);
             }
         }
+
         pageList.setRecords(list);
+
+
         return pageList;
     }
 
