@@ -156,6 +156,12 @@ export const constantRouterMap = [
         name: '视频管理',
         component: () => import('@/views/resource/studyVideo'),
         meta: { title: '视频管理', icon: 'table' }
+      },
+      {
+        path:'audit',
+        name: '视频审核',
+        component: () => import('@/views/resource/audit'),
+        meta: { title: '视频审核', icon: 'table' }
       }
     ]
   },

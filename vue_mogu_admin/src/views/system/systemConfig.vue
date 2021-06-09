@@ -1,49 +1,9 @@
 <template>
   <div class="app-container">
     <el-tabs type="border-card" @tab-click="handleClick" v-model="activeName">
-      <el-tab-pane name="one" v-permission="'/systemConfig/getSystemConfig'">
-        <span slot="label"><i class="el-icon-edit"></i> 系统配置</span>
-        <el-form style="margin-left: 20px;" label-position="left"   label-width="140px" >
+   
 
-          <aside>
-            通过开关选择博客编辑时的文本编辑器，以及文件显示方式<br/>
-          </aside>
-
-          <el-form-item label="封面图片显示优先级">
-            <el-radio v-for="item in picturePriorityDictList" :key="item.uid" v-model="form.picturePriority" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <el-form-item label="详情图片显示优先级">
-            <el-radio v-for="item in picturePriorityDictList" :key="item.uid" v-model="form.contentPicturePriority" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <el-form-item label="文本编辑器">
-            <el-radio v-for="item in editorModalDictList" :key="item.uid" v-model="form.editorModel" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <!--当有新的反馈，友链申请时进行通知，首先需要在系统管理处设置接收通知的邮箱 -->
-          <el-form-item label="网站消息邮件通知">
-            <el-radio v-for="item in openDictList" :key="item.uid" v-model="form.startEmailNotification" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <!-- 仪表盘弹框通知，在用户登录后台的时候会出现，可以手动关闭 -->
-          <el-form-item label="仪表盘弹框通知">
-            <el-radio v-for="item in openDictList" :key="item.uid" v-model="form.openDashboardNotification" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <!-- 仪表盘弹框通知，在用户登录后台的时候会出现，可以手动关闭 -->
-          <el-form-item label="注册用户邮件激活">
-            <el-radio v-for="item in openDictList" :key="item.uid" v-model="form.openEmailActivate" :label="item.dictValue" border size="medium">{{item.dictLabel}}</el-radio>
-          </el-form-item>
-
-          <el-form-item>
-            <el-button type="primary" @click="submitForm()" v-permission="'/systemConfig/editSystemConfig'">保 存</el-button>
-          </el-form-item>
-
-        </el-form>
-      </el-tab-pane>
-
-      <el-tab-pane name="three" v-permission="'/systemConfig/getSystemConfig'">
+      <!-- <el-tab-pane name="three" v-permission="'/systemConfig/getSystemConfig'">
         <span slot="label">
           <i class="el-icon-date"></i> 本地文件存储
         </span>
@@ -73,7 +33,7 @@
           </el-form-item>
 
         </el-form>
-      </el-tab-pane>
+      </el-tab-pane> -->
 
       <el-tab-pane name="four"  v-permission="'/systemConfig/getSystemConfig'">
         <span slot="label">
@@ -128,7 +88,7 @@
         </el-form>
       </el-tab-pane>
 
-      <el-tab-pane name="five" v-permission="'/systemConfig/getSystemConfig'">
+      <!-- <el-tab-pane name="five" v-permission="'/systemConfig/getSystemConfig'">
         <span slot="label">
           <i class="el-icon-date"></i> Minio对象存储
         </span>
@@ -174,7 +134,7 @@
             <el-button type="primary" @click="submitForm()" v-permission="'/systemConfig/editSystemConfig'">保 存</el-button>
           </el-form-item>
         </el-form>
-      </el-tab-pane>
+      </el-tab-pane> -->
 
 
       <el-tab-pane name="six" v-permission="'/systemConfig/getSystemConfig'">
@@ -295,7 +255,7 @@
           </el-form-item>
         </el-form>
       </el-tab-pane>
-
+<!-- 
       <el-tab-pane label="仪表盘通知" name="third">
         <span slot="label"><i class="el-icon-edit"></i> 仪表盘通知</span>
         <div class="editor-container">
@@ -305,7 +265,7 @@
         <div style="margin-top: 5px; margin-left: 10px;" >
           <el-button type="primary" @click="submitForm()" v-permission="'/system/editMe'">保 存</el-button>
         </div>
-      </el-tab-pane>
+      </el-tab-pane> -->
 
     </el-tabs>
 

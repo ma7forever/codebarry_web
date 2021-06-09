@@ -26,12 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * 字典类型 RestApi
- *
- * @author 陌溪
- * @date 2020年2月15日21:16:31
- */
 @RestController
 @RequestMapping("/sysDictType")
 @Api(value = "字典类型相关接口", tags = {"字典类型相关接口"})

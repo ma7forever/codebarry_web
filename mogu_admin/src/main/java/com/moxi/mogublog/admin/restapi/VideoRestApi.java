@@ -52,7 +52,8 @@ public class VideoRestApi {
     public String edit(@Validated({Update.class}) @RequestBody VideoVO videoVO, BindingResult result) {
 
         // 参数校验b
-        ThrowableUtils.checkParamArgument(result);
+      //因为审核不需要resourceId
+        // ThrowableUtils.checkParamArgument(result);
         log.info("编辑学习视频: {}", videoVO);
         return videoService.editVideo(videoVO);
     }

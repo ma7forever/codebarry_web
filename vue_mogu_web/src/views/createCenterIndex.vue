@@ -6,10 +6,7 @@
 <style>
 
 .sideV{
-      margin-top: 264px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1415px;
-}
+   margin-left: 395px;
+    margin-top: 170px
+} 
 </style>

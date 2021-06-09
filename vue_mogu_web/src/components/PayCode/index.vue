@@ -1,14 +1,20 @@
 <template>
   <div class="share">
-    <p class="diggit" @click="praiseBlog(blogUid)">
+    <p class="diggit" @click="praiseVideo(videoId)">
       <a href="javascript:void(0);">很赞哦！</a>
-      <span v-if="praiseCount!= 0">
-        (<b id="diggnum">{{praiseCount}}</b>)
+      <span v-if="priseCount!= 0">
+        (<b id="diggnum">{{priseCount}}</b>)
       </span>
     </p>
-    <p class="dasbox">
+    <!-- <p class="dasbox">
       <a href="javascript:void(0)" @click="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a>
-    </p>
+    </p> -->
+    <!-- <p class="diggit" @click="praiseBlog(videoId)">
+      <a href="javascript:void(0);">很赞哦！</a>
+      <span v-if="priseCount!= 0">
+        (<b id="diggnum">{{priseCount}}</b>)
+      </span>
+    </p> -->
     <div class="hide_box" v-if="showPay"></div>
     <div class="shang_box" v-if="showPay">
       <a class="shang_close" href="javascript:void(0)" @click="dashangToggle()" title="关闭">关闭</a>
@@ -50,18 +56,18 @@
 <script>
 import { getWebConfig } from "../../api/index";
 import {
-  praiseBlogByUid,
-  getBlogPraiseCountByUid
-} from "../../api/blogContent";
+  priseVideoByUid,
+  getVideoPriseCountByUid
+} from "../../api/videoShow";
 import {mapMutations} from "vuex";
 export default {
   name: "PayCode",
   props: {
-    praiseCount: {
+    priseCount: {
       type: Number,
       default: 0
     },
-    blogUid: {
+    videoId: {
       type: String
     }
   },
@@ -97,8 +103,8 @@ export default {
         this.payCode = this.webConfigData.weixinPayPhoto;
       }
     },
-    //博客点赞
-    praiseBlog: function(uid) {
+    //视频点赞
+    praiseVideo: function(uid) {
       // 判断用户是否登录
       let isLogin = this.$store.state.user.isLogin
       if(!isLogin) {
@@ -113,8 +119,8 @@ export default {
       }
 
       var params = new URLSearchParams();
-      params.append("uid", uid);
-      praiseBlogByUid(params).then(response => {
+      params.append("videoId", uid);
+      priseVideoByUid(params).then(response => {
         if (response.code == this.$ECode.SUCCESS) {
           this.$notify({
             title: '成功',
@@ -122,7 +128,7 @@ export default {
             type: 'success',
             offset: 100
           });
-          this.$emit('update:praiseCount',response.data);
+          this.$emit('update:priseCount',response.data);
         } else {
           this.$notify.error({
             title: '错误',
@@ -135,10 +141,10 @@ export default {
     //获取点赞数
     getPraiseCount: function(uid) {
       var params = new URLSearchParams();
-      params.append("uid", uid);
-      getBlogPraiseCountByUid(params).then(response => {
+      params.append("videoId", uid);
+      getVideoPriseCountByUid(params).then(response => {
         if (response.code == this.$ECode.SUCCESS) {
-          this.praiseCount = response.data;
+          this.priseCount = response.data;
         }
       });
     }

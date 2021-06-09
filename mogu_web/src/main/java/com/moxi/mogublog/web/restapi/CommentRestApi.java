@@ -498,8 +498,10 @@ public class CommentRestApi {
         // 判断该博客是否开启评论功能
         if (StringUtils.isNotEmpty(commentVO.getBlogUid())) {
             Blog blog = blogService.getById(commentVO.getBlogUid());
-            if (SysConf.CAN_NOT_COMMENT.equals(blog.getOpenComment())) {
-                return ResultUtil.result(SysConf.ERROR, MessageConf.BLOG_NO_OPEN_COMMENTS);
+            if(blog!=null){
+                if (SysConf.CAN_NOT_COMMENT.equals(blog.getOpenComment())) {
+                    return ResultUtil.result(SysConf.ERROR, MessageConf.BLOG_NO_OPEN_COMMENTS);
+                }
             }
         }
         String userUid = request.getAttribute(SysConf.USER_UID).toString();
@@ -559,7 +561,14 @@ public class CommentRestApi {
                         case "MESSAGE_BOARD": {
                             url = dataWebsiteUrl + "messageBoard";
                         }
+
                         break;
+
+                        case "VIDEO_INFO": {
+                            url = dataWebsiteUrl + "videoShow?videoId=" + toComment.getBlogUid();
+
+                        }
+                       break;
                         default: {
                             log.error("跳转到其它链接");
                         }

@@ -98,6 +98,7 @@
             offset: 100
           });
           // 未登录，自动弹出登录框
+          
           this.setLoginMessage(Math.random())
           return;
         }
@@ -195,7 +196,7 @@
     height: 135px;
     position: absolute;
     z-index: 99;
-    top: 10px;
+    top: 49px;
   }
   .emoji-size-small {
     zoom: 0.3;
@@ -209,7 +210,6 @@
   .commentBox {
     /*min-width: 700px;*/
     width: 100%;
-    height: 100px;
     margin: 0 auto;
   }
   .commentBox .left {

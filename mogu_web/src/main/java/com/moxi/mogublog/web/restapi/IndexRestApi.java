@@ -81,6 +81,14 @@ public class IndexRestApi {
         log.info("获取首页排行博客");
         return ResultUtil.result(SysConf.SUCCESS, blogService.getHotBlog());
     }
+    @ApiOperation(value = "获取首页排行视频", notes = "获取首页排行视频")
+    @GetMapping("/getHotVideo")
+    public String getHotVideo() {
+
+        log.info("获取首页视频排行");
+        return ResultUtil.result(SysConf.SUCCESS, videoService.getHotVideo());
+    }
+
 //    @ApiOperation(value = "获取首页最新视频", notes = "获取首页最新")
 //    @GetMapping("/getNewVideo")
 //    public String getHotVideo(HttpServletRequest request,

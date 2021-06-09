@@ -37,7 +37,7 @@ public class VideoVO extends BaseVO<VideoVO> {
     private BlogSort blogSort;
     private List<Tag> tagList;
     private String fileUid;
-    @NotBlank(groups = {Insert.class, Update.class})
+    private Integer priseCount;
     private String resourceSortUid;
     /**
      * 是否发布

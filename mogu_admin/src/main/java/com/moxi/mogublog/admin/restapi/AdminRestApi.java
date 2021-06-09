@@ -71,6 +71,7 @@ public class AdminRestApi {
     public String edit(@Validated({Update.class}) @RequestBody AdminVO adminVO, BindingResult result) {
         // 参数校验
         ThrowableUtils.checkParamArgument(result);
+
         return adminService.editAdmin(adminVO);
     }
 

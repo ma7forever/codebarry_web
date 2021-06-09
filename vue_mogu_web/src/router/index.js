@@ -23,20 +23,26 @@ export const constantRouterMap = [
       { path: '/time', component: () => import('@/views/time') },
       { path: '/info', component: () => import('@/views/info') },
       { path: '/messageBoard', component: () => import('@/views/messageBoard') },
-      { path: '/videoShow', component: () => import('@/views/videoShowAL') }
-      
-    ]
-  },
+      { path: '/videoShow', component: () => import('@/views/videoShowAL') },
+      { path: '/anime', component: () => import('@/views/anime') },
   
-  { path: '/createCenter',
+      { path: '/newestVideo', component: () => import('@/views/newestVideo') },
+      { path: '/createCenter',
+
   component:  CreateCenterHome,
   children: [
     {  path: '/createCenter',component: () => import('@/views/createCenterIndex')  } ,
-    {  path: '/upload',component: () => import('@/views/upload')  } ,
-
+    {  path: '/upload',component: () => import('@/views/uploadAuth')  } ,
+      { path: '/myVideo',component: () => import('@/views/myVideo') } ,
+      { path: '/auditFail',component: () => import('@/views/auditFail') } ,
+      { path: '/publishVideo',component: () => import('@/views/publishVideo') } ,
+      { path: '/auditing',component: () => import('@/views/auditing') } ,
   ]
 
   },
+    ]
+  },
+  
   { path: '/404', component: () => import('@/views/404') },
   { path: '/500', component: () => import('@/views/500') },
   { path: '/502', component: () => import('@/views/502') },

@@ -70,14 +70,14 @@
 
           <el-row :gutter="24">
             <el-col :span="10">
-              <el-form-item label="登录方式">
+              <!-- <el-form-item label="登录方式">
                 <el-checkbox-group v-model="form.loginTypeList">
                   <el-checkbox label="1" style="margin-left: 10px">账号密码</el-checkbox>
                   <el-checkbox label="2" style="margin-left: 10px">码云</el-checkbox>
                   <el-checkbox label="3" style="margin-left: 10px">Github</el-checkbox>
                   <el-checkbox label="4" style="margin-left: 10px">QQ</el-checkbox>
                   <el-checkbox label="5" style="margin-left: 10px">微信</el-checkbox>
-                </el-checkbox-group>
+                </el-checkbox-group> -->
               </el-form-item>
             </el-col>
           </el-row>
@@ -88,7 +88,7 @@
         </el-form>
       </el-tab-pane>
 
-
+<!-- 
       <el-tab-pane v-permission="'/webConfig/getWebConfig'">
         <span slot="label">
           <i class="el-icon-date"></i> 评论&打赏
@@ -176,9 +176,9 @@
           </el-form-item>
         </el-form>
 
-      </el-tab-pane>
+      </el-tab-pane> -->
 
-      <el-tab-pane v-permission="'/webConfig/getWebConfig'">
+      <!-- <el-tab-pane v-permission="'/webConfig/getWebConfig'">
         <span slot="label">
           <i class="el-icon-date"></i> 关注我们
         </span>
@@ -230,7 +230,7 @@
           </el-form-item>
 
         </el-form>
-      </el-tab-pane>
+      </el-tab-pane> -->
 
     </el-tabs>
 

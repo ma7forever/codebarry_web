@@ -17,7 +17,7 @@ public enum ECommentSource {
      * 博客详情
      */
     BLOG_INFO("BLOG_INFO", "博客详情"),
-
+    VIDEO_INFO("VIDEO_INFO", "博客详情"),
     /**
      * 留言板
      */

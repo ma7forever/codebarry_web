@@ -43,9 +43,14 @@ public class BaseRedisConf {
      */
     public final static String BLOG_LEVEL = "BLOG_LEVEL";
 
+
+
+
+
     /**
      * 博客点击
      */
+
     public final static String BLOG_CLICK = "BLOG_CLICK";
 
     /**

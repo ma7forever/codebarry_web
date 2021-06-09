@@ -55,13 +55,13 @@
       </el-col>
     </el-row>
 
-    <!--文章贡献度-->
+    <!-- 文章贡献度
     <el-row>
       <CalendarChart></CalendarChart>
-    </el-row>
+    </el-row> -->
 
     <!-- 分类图-->
-    <el-row :gutter="32">
+    <!-- <el-row :gutter="32">
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
           <pie-chart
@@ -97,7 +97,7 @@
           <todo-list></todo-list>
         </div>
       </el-col>
-    </el-row>
+    </el-row> -->
 
     <!--访问量统计-->
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">

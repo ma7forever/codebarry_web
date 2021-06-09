@@ -200,10 +200,6 @@
             <el-input v-model="userInfo.qqNumber" style="width: 100%"></el-input>
           </el-form-item>
 
-          <el-form-item label="职业" :label-width="labelWidth" prop="occupation">
-            <el-input v-model="userInfo.occupation" style="width: 100%"></el-input>
-          </el-form-item>
-
           <el-form-item label="简介" :label-width="labelWidth" prop="summary">
             <el-input
               type="textarea"
@@ -401,37 +397,6 @@
           </el-collapse>
 
           <el-divider></el-divider>
-
-          <el-form-item label="网站图标">
-            <div class="imgBody" v-if="blogLink.photoList">
-              <i class="el-icon-error inputClass" v-show="icon" @click="deletePhoto('link')" @mouseover="icon = true"></i>
-              <img @mouseover="icon = true" @mouseout="icon = false" v-bind:src="blogLink.photoList[0]" />
-            </div>
-
-            <div v-else class="uploadImgBody" @click="checkPhoto">
-              <i class="el-icon-plus avatar-uploader-icon"></i>
-            </div>
-          </el-form-item>
-
-          <el-form-item label="网站名称" :label-width="labelWidth" prop="title">
-            <el-input v-model="blogLink.title" style="width: 100%"></el-input>
-          </el-form-item>
-
-          <el-form-item label="网站简介" :label-width="labelWidth" prop="summary">
-            <el-input v-model="blogLink.summary" style="width: 100%"></el-input>
-          </el-form-item>
-
-          <el-form-item label="网站地址" :label-width="labelWidth" prop="url">
-            <el-input v-model="blogLink.url" style="width: 100%"></el-input>
-          </el-form-item>
-
-          <el-form-item label="站长邮箱" :label-width="labelWidth" prop="email">
-            <el-input v-model="blogLink.email" placeholder="用于申请通过邮件通知" style="width: 100%"></el-input>
-          </el-form-item>
-
-          <el-form-item>
-            <el-button type="primary" @click="submitForm('replyBlogLink')">申 请</el-button>
-          </el-form-item>
         </el-form>
       <el-tab-pane label="修改密码" name="6">
         <span slot="label"><i class="el-icon-s-tools"></i> 修改密码</span>
@@ -1008,6 +973,7 @@
               this.isLogin = true;
               this.userInfo = response.data;
               this.setUserInfo(this.userInfo)
+              console.log
             } else {
               this.isLogin = false;
               delCookie("token");

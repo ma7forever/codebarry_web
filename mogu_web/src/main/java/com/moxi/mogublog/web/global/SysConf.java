@@ -24,6 +24,7 @@ public final class SysConf extends BaseSysConf {
     public static final String TO_NICKNAME = "to_nickname";
     public static final String USER = "user";
 
+    public static final  String videoSourceId="video_source_id";
     /**
      * 用于第三方登录
      */

@@ -86,12 +86,12 @@ public class LoginRestApi {
         }
         String ip = IpUtils.getIpAddr(request);
         String limitCount = redisUtil.get(RedisConf.LOGIN_LIMIT + RedisConf.SEGMENTATION + ip);
-        if (StringUtils.isNotEmpty(limitCount)) {
-            Integer tempLimitCount = Integer.valueOf(limitCount);
-            if (tempLimitCount >= Constants.NUM_FIVE) {
-                return ResultUtil.result(SysConf.ERROR, "密码输错次数过多,已被锁定30分钟");
-            }
-        }
+//        if (StringUtils.isNotEmpty(limitCount)) {
+//            Integer tempLimitCount = Integer.valueOf(limitCount);
+//            if (tempLimitCount >= Constants.NUM_FIVE) {
+//                return ResultUtil.result(SysConf.ERROR, "密码输错次数过多,已被锁定30分钟");
+//            }
+//        }
         Boolean isEmail = CheckUtils.checkEmail(username);
         Boolean isMobile = CheckUtils.checkMobileNumber(username);
         QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();

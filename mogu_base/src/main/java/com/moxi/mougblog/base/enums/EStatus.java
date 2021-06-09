@@ -23,4 +23,6 @@ public class EStatus {
      * 置顶的
      */
     public static final int STICK = 3;
+    public static  final int AUDIT =4; //待审核
+    public static final int AUDITFAIL = 5;//审核未通过
 }

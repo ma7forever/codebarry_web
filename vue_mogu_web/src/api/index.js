@@ -23,7 +23,13 @@ export function getBlogByTime (params) {
     params
   })
 }
-
+export function getHotVideo(params) {
+  return request({
+    url: process.env.WEB_API + '/index/getHotVideo',
+    method: 'get',
+    data: params
+  })
+}
 export function getHotBlog (params) {
   return request({
     url: process.env.WEB_API + '/index/getHotBlog',

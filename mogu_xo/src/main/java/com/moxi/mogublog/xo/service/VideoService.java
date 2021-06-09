@@ -8,6 +8,7 @@ import com.moxi.mogublog.xo.vo.StudyVideoVO;
 import com.moxi.mogublog.xo.vo.UserVO;
 import com.moxi.mogublog.xo.vo.VideoVO;
 import com.moxi.mougblog.base.service.SuperService;
+import org.springframework.amqp.rabbit.connection.PublisherCallbackChannelImpl;
 import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
@@ -24,4 +25,10 @@ public interface VideoService  extends SuperService<Video> {
     public String getUserVideo(String page, String page2, User user);
     public IPage<Video> getPageList(VideoVO videoVO);
     public String editVideo(VideoVO VideoVO);
+    public User getVideoAuthor(String videoId);
+    public String addUserVideo(VideoVO videoVO);
+    public Video getVideoInfo(String videoId);
+    public String priseVideoByUid(String videoId);
+    public Integer getVideoPriseCountByUid(String videoId);
+    public IPage<Video> getHotVideo();
 }

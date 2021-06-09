@@ -60,6 +60,7 @@
             Sticky
         },
         created() {
+          console.log(this.$store.state.user.userInfo.uid)
             this.getCommentDataList();
         },
         mounted () {

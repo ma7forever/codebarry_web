@@ -8,12 +8,6 @@ import com.moxi.mougblog.base.service.SuperService;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 字典数据 服务类
- *
- * @author 陌溪
- * @date 2020年2月15日21:06:45
- */
 public interface SysDictDataService extends SuperService<SysDictData> {
     /**
      * 获取数据字典列表

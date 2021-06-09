@@ -17,6 +17,7 @@ import java.util.List;
 
 @Data
 @TableName("t_video")
+@ToString
 public class Video extends SuperEntity<Video>{
     private static final long serialVersionUID = 1L;
     private String title;
@@ -43,6 +44,7 @@ public class Video extends SuperEntity<Video>{
     private String summary;
     @TableField(exist = false)
     private List<String> photoList;
+    private Integer priseCount;//点赞数
 
     /**
      * 资源分类

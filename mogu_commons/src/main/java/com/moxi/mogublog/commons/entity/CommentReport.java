@@ -4,14 +4,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.moxi.mougblog.base.entity.SuperEntity;
 import lombok.Data;
 
-/**
- * <p>
- * 评论举报表
- * </p>
- *
- * @author 陌溪
- * @since 2020年1月12日15:42:19
- */
 @Data
 @TableName("t_comment_report")
 public class CommentReport extends SuperEntity<CommentReport> {

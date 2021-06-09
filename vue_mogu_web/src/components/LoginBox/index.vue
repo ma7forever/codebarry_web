@@ -32,39 +32,8 @@
         </div>
 
 
-        <el-row class="elRow">
-          <el-tooltip content="码云" placement="bottom">
-            <el-button type="danger" circle @click="goAuth('gitee')" :disabled="loginType.gitee">
-              <span class="iconfont">&#xe602;</span>
-            </el-button>
-          </el-tooltip>
 
-          <el-tooltip content="Github" placement="bottom">
-            <el-button type="info" circle @click="goAuth('github')" :disabled="loginType.github">
-              <span class="iconfont">&#xe64a;</span>
-            </el-button>
-          </el-tooltip>
-
-          <el-tooltip content="QQ" placement="bottom">
-            <el-button type="primary" circle @click="goAuth('qq')" :disabled="loginType.qq">
-              <span class="iconfont">&#xe601;</span>
-            </el-button>
-          </el-tooltip>
-
-          <el-tooltip content="微信" placement="bottom">
-            <el-button type="success" circle @click="goAuth('wechat')" :disabled="loginType.wechat">
-              <span class="iconfont">&#xe66f;</span>
-            </el-button>
-          </el-tooltip>
-
-        </el-row>
-        <div class="loginTip">目前登录方式支持
-          <span v-if="!loginType.password"> 账号密码 </span>
-          <span v-if="!loginType.gitee"> 码云 </span>
-          <span v-if="!loginType.github"> Github </span>
-          <span v-if="!loginType.qq"> QQ </span>
-          <span v-if="!loginType.wechat"> 微信 </span>
-        </div>
+     
       </el-form>
 
     </div>

@@ -80,7 +80,7 @@ public class StudyVideoServiceImpl extends SuperServiceImpl<StudyVideoMapper, St
         });
 
         for (StudyVideo item : list) {
-            //获取分类资源
+            //添加图片资源
             if (StringUtils.isNotEmpty(item.getFileUid())) {
                 List<String> pictureUidsTemp = StringUtils.changeStringToString(item.getFileUid(), SysConf.FILE_SEGMENTATION);
                 List<String> pictureListTemp = new ArrayList<>();
