@@ -4,7 +4,7 @@ spring:
 vod:
   configs:
     #视频点播VOD，相关配置信息
-    accessKeyId: LTAI5tLoXXEkZBUSjh5mXkmF
-    accessKeySecret: yqdej9OTbvaZlz4uhW1QbGMbkppmyh
+    accessKeyId: ""
+    accessKeySecret: ""
     #点播服务接入区域
     regionId: cn-shanghai
